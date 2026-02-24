@@ -13,6 +13,8 @@ public class Frame extends javax.swing.JFrame {
         Verifylbl.setVisible(false);
         LogInDiag.setModal(true);
         LogInDiag.setSize(400, 200);
+        PassInsDiag.setModal(true);
+        PassInsDiag.setSize(500, 300);
     }
 
    
@@ -22,9 +24,13 @@ public class Frame extends javax.swing.JFrame {
 
         LogInDiag = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        LoginConfirmBut = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         PassInsDiag = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        PassInslbl = new javax.swing.JLabel();
+        PassInsLbl2 = new javax.swing.JLabel();
+        PassInfConfirmBut = new javax.swing.JToggleButton();
         LoginP = new javax.swing.JPanel();
         Userlbl = new javax.swing.JLabel();
         NombreFld = new javax.swing.JTextField();
@@ -64,14 +70,14 @@ public class Frame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jToggleButton1.setBackground(new java.awt.Color(0, 204, 204));
-        jToggleButton1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jToggleButton1.setText("Ok");
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        LoginConfirmBut.setBackground(new java.awt.Color(0, 204, 204));
+        LoginConfirmBut.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LoginConfirmBut.setForeground(new java.awt.Color(0, 0, 0));
+        LoginConfirmBut.setText("Ok");
+        LoginConfirmBut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        LoginConfirmBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                LoginConfirmButActionPerformed(evt);
             }
         });
 
@@ -87,7 +93,7 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(142, 142, 142)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LoginConfirmBut, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -99,21 +105,69 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton1)
+                .addComponent(LoginConfirmBut)
                 .addGap(25, 25, 25))
         );
 
         LogInDiag.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        PassInslbl.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        PassInslbl.setForeground(new java.awt.Color(0, 0, 0));
+        PassInslbl.setText("Password Instructions");
+
+        PassInsLbl2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        PassInsLbl2.setForeground(new java.awt.Color(0, 0, 0));
+        PassInsLbl2.setText("1.Must contain 2 numbers Minimum\n" +
+            "2.Not Related to Username\n" +
+            "3.Longer than 8 characters");
+
+        PassInfConfirmBut.setBackground(new java.awt.Color(0, 204, 204));
+        PassInfConfirmBut.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        PassInfConfirmBut.setForeground(new java.awt.Color(0, 0, 0));
+        PassInfConfirmBut.setText("Ok");
+        PassInfConfirmBut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        PassInfConfirmBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PassInfConfirmButActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PassInsLbl2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PassInfConfirmBut, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(180, 180, 180))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addComponent(PassInslbl)
+                .addContainerGap(132, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PassInslbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PassInsLbl2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PassInfConfirmBut))
+        );
+
         javax.swing.GroupLayout PassInsDiagLayout = new javax.swing.GroupLayout(PassInsDiag.getContentPane());
         PassInsDiag.getContentPane().setLayout(PassInsDiagLayout);
         PassInsDiagLayout.setHorizontalGroup(
             PassInsDiagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PassInsDiagLayout.setVerticalGroup(
             PassInsDiagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -328,7 +382,7 @@ public class Frame extends javax.swing.JFrame {
                 .addComponent(Userlbl5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogOutBut5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(LogOutBut)
                 .addContainerGap())
             .addComponent(jScrollPane1)
@@ -420,7 +474,7 @@ public class Frame extends javax.swing.JFrame {
                     .addGroup(UserCreatePLayout.createSequentialGroup()
                         .addGap(199, 199, 199)
                         .addComponent(CreateBut, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         UserCreatePLayout.setVerticalGroup(
             UserCreatePLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -507,9 +561,9 @@ public class Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LogInButActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void LoginConfirmButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginConfirmButActionPerformed
         LogInDiag.setVisible(false);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_LoginConfirmButActionPerformed
 
     private void LogOutButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutButActionPerformed
         Menu.setVisible(false);
@@ -546,12 +600,16 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateButActionPerformed
 
     private void PassInfoButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassInfoButActionPerformed
-        // TODO add your handling code here:
+        PassInsDiag.setVisible(true);
     }//GEN-LAST:event_PassInfoButActionPerformed
 
     private void NameInfoButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameInfoButActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NameInfoButActionPerformed
+
+    private void PassInfConfirmButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassInfConfirmButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PassInfConfirmButActionPerformed
 
     /**
      * @param args the command line arguments
@@ -601,14 +659,18 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JToggleButton LogOutBut3;
     private javax.swing.JToggleButton LogOutBut4;
     private javax.swing.JToggleButton LogOutBut5;
+    private javax.swing.JToggleButton LoginConfirmBut;
     private javax.swing.JPanel LoginP;
     private javax.swing.JPanel Menu;
     private javax.swing.JTextField NameCreatefld;
     private javax.swing.JToggleButton NameInfoBut;
     private javax.swing.JTextField NombreFld;
     private javax.swing.JTextField PassCreateFld;
+    private javax.swing.JToggleButton PassInfConfirmBut;
     private javax.swing.JToggleButton PassInfoBut;
     private javax.swing.JDialog PassInsDiag;
+    private javax.swing.JLabel PassInsLbl2;
+    private javax.swing.JLabel PassInslbl;
     private javax.swing.JLabel Pull10lbl;
     private javax.swing.JLabel Pull1lbl;
     private javax.swing.JTextField UserCreateFld;
@@ -626,7 +688,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
